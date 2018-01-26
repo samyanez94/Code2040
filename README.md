@@ -1,4 +1,4 @@
-# Code2040
+# Code2040 Technical Assessment
 This project contains my answers for the Code2040 Fellowship Program 2017 technical assessment.
 
 ## Author
