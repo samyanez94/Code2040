@@ -113,7 +113,7 @@ $(document).ready(function () {
     let datingAPI = "http://challenge.code2040.org/api/dating";
     let validateDatingAPI = "http://challenge.code2040.org/api/dating/validate";
 
-    // Converts an  ISO 8601 datestamp into a Date object and adds some seconds to it. Then it converts it backs to and  ISO 8601 string to be send together with the POST request.
+    // Converts an ISO 8601 datestamp into a Date object and adds some seconds to it. Then it converts it backs to and  ISO 8601 string to be send together with the POST request.
     function dating(data) {
         let date = new Date(data.datestamp);
         date.setSeconds(date.getSeconds() + data.interval);
