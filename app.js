@@ -13,7 +13,7 @@ $(document).ready(function () {
         github: githubURL
     };
 
-    //HTTP POST request.
+    // HTTP POST request.
     $.post(registerAPI, registerData, function (data) {
         console.log(data);
     });
@@ -25,7 +25,7 @@ $(document).ready(function () {
     let reverseAPI = "http://challenge.code2040.org/api/reverse";
     let validateReverseAPI = "http://challenge.code2040.org/api/reverse/validate";
 
-    //Reverses the String data and performs the HTTP POST request.
+    // Reverses the String data and performs the HTTP POST request.
     function reverseString(data) {
         let reversedString = data.split("").reverse().join("");
         $.post(validateReverseAPI, {
@@ -37,7 +37,7 @@ $(document).ready(function () {
             });
     };
 
-    //HTTP POST request.
+    // HTTP POST request.
     $.post(reverseAPI, {
         token: key
     }, reverseString);
@@ -49,7 +49,7 @@ $(document).ready(function () {
     let haystackAPI = "http://challenge.code2040.org/api/haystack";
     let validateHaystackAPI = "http://challenge.code2040.org/api/haystack/validate";
 
-    //Find the index of the needle using a linear search and performs the HTTP POST request.
+    // Find the index of the needle using a linear search and performs the HTTP POST request.
     function findNeedle(data) {
         let index = linearSearch(data.haystack, data.needle);
         $.post(validateHaystackAPI, {
@@ -60,7 +60,7 @@ $(document).ready(function () {
         });
     };
 
-    //Linear seach. Sequencially checks each item of an array for the target value until a match is found.
+    // Linear seach. Sequencially checks each item of an array for the target value until a match is found.
     function linearSearch(items, value) {
         var index = 0;
         var found = false;
@@ -74,7 +74,7 @@ $(document).ready(function () {
         return index
     };
 
-    //HTTP POST request.
+    // HTTP POST request.
     $.post(haystackAPI, {
         token: key
     }, findNeedle);
@@ -86,7 +86,7 @@ $(document).ready(function () {
     let prefixAPI = "http://challenge.code2040.org/api/prefix";
     let validatePrefixAPI = "http://challenge.code2040.org/api/prefix/validate";
 
-    //Creates an array containing only the strings that do not start with the prefix in data and performs the HTTP POST request.
+    // Creates an array containing only the strings that do not start with the prefix in data and performs the HTTP POST request.
     function hasPrefix(data) {
         var strings = [];
         for (var str in data.array) {
@@ -101,7 +101,7 @@ $(document).ready(function () {
         });
     };
 
-    //HTTP POST request.
+    // HTTP POST request.
     $.post(prefixAPI, {
         token: key
     }, hasPrefix);
@@ -113,7 +113,7 @@ $(document).ready(function () {
     let datingAPI = "http://challenge.code2040.org/api/dating";
     let validateDatingAPI = "http://challenge.code2040.org/api/dating/validate";
 
-    //Converts an  ISO 8601 datestamp into a Date object and adds some seconds to it. Then it converts it backs to and  ISO 8601 string to be send together with the POST request.
+    // Converts an  ISO 8601 datestamp into a Date object and adds some seconds to it. Then it converts it backs to and  ISO 8601 string to be send together with the POST request.
     function dating(data) {
         let date = new Date(data.datestamp);
         date.setSeconds(date.getSeconds() + data.interval);
@@ -127,7 +127,7 @@ $(document).ready(function () {
         });
     };
 
-    //HTTP POST request.
+    // HTTP POST request.
     $.post(datingAPI, {
         token: key
     }, dating);
