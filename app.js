@@ -132,5 +132,4 @@ $(document).ready(function () {
         token: key
     }, dating);
 
-
-}); // end ready
+});
